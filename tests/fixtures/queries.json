@@ -1,0 +1,22 @@
+[
+  {
+    "query": "How do I isolate Python dependencies?",
+    "relevant_chunks": ["python_basics.md:0015"]
+  },
+  {
+    "query": "How do I define reusable code?",
+    "relevant_chunks": ["python_basics.md:0009"]
+  },
+  {
+    "query": "How do I handle exceptions?",
+    "relevant_chunks": ["python_basics.md:0021"]
+  },
+  {
+    "query": "What is the purpose of a virtual environment?",
+    "relevant_chunks": ["python_basics.md:0015"]
+  },
+  {
+    "query": "Which Python construct lets a program respond to errors?",
+    "relevant_chunks": ["python_basics.md:0021"]
+  }
+]

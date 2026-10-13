@@ -19,4 +19,9 @@
     "query": "Which Python construct lets a program respond to errors?",
     "relevant_chunks": ["python_basics.md:0021"]
   }
+  ,
+  {
+    "query": "How do I upload my local commits to GitHub?",
+    "relevant_chunks": ["git_basics.md:0019"]
+  }
 ]

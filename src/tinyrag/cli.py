@@ -39,10 +39,18 @@ def index(
     console.print(f"Saved index to {INDEX_DIR}")
 
 
+
 @app.command()
 def search(
     query: str = typer.Argument(..., help="Question to search for."),
     top_k: int = typer.Option(3, "--top-k", min=1, help="Number of results."),
+    min_score: float | None = typer.Option(
+        None,
+        "--min-score",
+        min=-1.0,
+        max=1.0,
+        help="Optional minimum cosine similarity score.",
+    ),
 ):
     """Search the saved index."""
     if not (INDEX_DIR / "vectors.npy").exists():
@@ -53,6 +61,18 @@ def search(
     embedder = Embedder()
     query_vector = embedder.encode([query])[0]
     results = vector_index.search(query_vector, top_k=top_k)
+
+    if min_score is not None:
+        results = [
+            result for result in results
+            if result["score"] >= min_score
+        ]
+
+    if not results:
+        console.print(
+            "[yellow]No sufficiently relevant results found.[/yellow]"
+        )
+        raise typer.Exit(code=0)
 
     table = Table(title="TinyRAG Search Results")
     table.add_column("Rank", justify="right")
@@ -69,6 +89,7 @@ def search(
         )
 
     console.print(table)
+
 
 
 if __name__ == "__main__":

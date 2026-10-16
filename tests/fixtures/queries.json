@@ -24,4 +24,9 @@
     "query": "How do I upload my local commits to GitHub?",
     "relevant_chunks": ["git_basics.md:0019"]
   }
+  ,
+  {
+    "query": "How can I work on a feature without changing the main branch?",
+    "relevant_chunks": ["git_basics.md:0013"]
+  }
 ]

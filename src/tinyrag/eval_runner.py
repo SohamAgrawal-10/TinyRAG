@@ -12,7 +12,7 @@ from tinyrag.index import VectorIndex
 from tinyrag.storage import load_index
 
 
-def is_out_of_scope(top_score: float | None, min_score: float = 0.30) -> bool:
+def is_out_of_scope(top_score: float | None, min_score: float = 0.45) -> bool:
     """Return whether a query should be rejected as out of scope."""
     return top_score is None or top_score < min_score
 
@@ -22,7 +22,7 @@ def main():
     dataset_path = Path("tests/fixtures/queries.json")
     out_of_scope_path = Path("tests/fixtures/out_of_scope_queries.json")
     k = 1
-    min_score = 0.30
+    min_score = 0.45
 
 
     if not (index_dir / "vectors.npy").exists():
@@ -83,12 +83,7 @@ def main():
         if was_rejected:
             rejected += 1
 
-        print(f"\nOut-of-scope query: {query}")
-        print(
-            f"Top score: "
-            f"{top_score if top_score is not None else 'No results'}"
-        )
-        print(f"Rejected: {was_rejected}")
+    print(f"Top score: {top_score:.3f}" if top_score is not None else "Top score: No results")
 
     print("\n=== Out-of-Scope Evaluation ===")
     print(f"Queries evaluated: {len(out_of_scope_queries)}")

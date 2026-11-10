@@ -29,4 +29,32 @@
     "query": "How can I work on a feature without changing the main branch?",
     "relevant_chunks": ["git_basics.md:0013"]
   }
+  ,
+  {
+    "query": "Why should I avoid installing packages globally for each project?",
+    "relevant_chunks": ["python_basics.md:0015"]
+  },
+  {
+    "query": "What should I do to save my work and send my commits to a remote repository?",
+    "relevant_chunks": ["git_basics.md:0019"]
+  },
+  {
+    "query": "How can I experiment with new code without risking changes to the main branch?",
+    "relevant_chunks": ["git_basics.md:0013"]
+  },
+  {
+    "query": "How do I create a new branch in Git?",
+    "relevant_chunks": ["git_basics.md:0013"]
+  },
+  {
+    "query": "How do I resolve a Git merge conflict?",
+    "relevant_chunks": ["git_basics.md:0033"]
+  },
+  
+  {
+    "query": "What keyword is used to define a function in Python?",
+    "relevant_chunks": ["python_basics.md:0009"]
+  }
+
+
 ]

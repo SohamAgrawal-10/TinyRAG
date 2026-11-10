@@ -8,5 +8,20 @@
   },
   {
     "query": "What is the current price of Bitcoin?"
+  },
+  {
+    "query": "How do I train a neural network using PyTorch?"
+  },
+  {
+    "query": "Explain the difference between TCP and UDP."
+  },
+  {
+    "query": "How do I calculate compound interest?"
+  },
+  {
+    "query": "What are the symptoms of vitamin B12 deficiency?"
+  },
+  {
+    "query": "Which Python function calculates the square root of a number?"
   }
 ]
